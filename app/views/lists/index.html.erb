@@ -1,0 +1,25 @@
+<h1>My Movie lists 🎬</h1>
+
+<div class="row justify-content-center">
+  <div class="col-5">
+    <h2>Please click a movie list below ⬇️ </h2>
+  </div>
+</div>
+ <div class="row justify-content-center">
+  <div class="col-5">
+    <div class="card-one">
+      <ul>
+        <% @lists.each do |list| %>
+          <li>
+            <%=  link_to list.name, list_path(list), class: "list" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-4">
+    <%= link_to "+ Add a list", new_list_path, class: "add-list" %>
+  </div>
+</div>
